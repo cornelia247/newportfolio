@@ -1,0 +1,455 @@
+/*Start global*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family: "Roboto", sans-serif;
+    color: #eeeeee;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background: url(images/sitebg.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+section{
+    padding: 6rem ;
+}
+a{
+    list-style: none;
+    text-decoration: none;
+    color: #eeeeee;
+}
+p{
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+img{
+    width: 100%;
+}
+/*End global*/
+
+/*Start reusable*/
+.container{
+    width: 90%;
+    max-width: 120rem;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.section-heading{
+    text-align: center;
+    margin-bottom: 10rem;
+    
+}
+.section-heading h1{
+    font-size: 3.5rem;
+    color: rgba(255,255,255, .3);
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 1rem;
+    
+}
+.section-heading h1::before,
+.section-heading h1::after{
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255,255,255, .75);
+   
+    
+}
+.section-heading h1::before{
+    width: 10rem;
+    height: 3px;
+    border-radius: .8rem;
+}
+.section-heading h1::after{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    bottom: -1rem;
+}
+.section-heading h6{
+    font-size: 1.6rem;
+    font-weight: 300;
+    
+
+}
+/*End reusable*/
+
+/*Start header*/
+header{
+    font-size: 16px;
+    width: 100%;
+    height: 100vh;
+}
+.nav-list{
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+.logo{
+    font-family: monospace;
+    font-size: 25px;
+    background: linear-gradient( to top, #ffe838, #fd57bf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.nav-links{
+    display: flex;
+    list-style: none;
+}
+.nav-link{
+    margin: 0 2rem;
+    padding: 1rem;
+    font-weight: bold;
+}
+.nav-link:hover,
+.nav-link:focus{
+    background: linear-gradient( to top, #ffe838, #fd57bf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.menu-toggler{
+    width: 4rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 650ms ease-out;
+}
+.menu-toggler{
+    display: none;
+}
+.menu-toggler.open{
+    transform: rotate(-45deg);
+}
+.bar{
+    background: linear-gradient(to right, #ffe838, #fd57bf);
+    width: 100%;
+    height: 3px;
+    border-radius: .8rem;
+}
+.bar.half{
+    width: 50%;
+}
+.open .bar.start{
+    transform: rotate(-450deg) translateX(.8rem);
+}
+.bar.start{
+    transform-origin: right;
+    transition: transform 650ms cubic-bezier(0.54 -0.81, 0.57, 0.57);
+}
+.bar.end{
+    align-self: flex-end;
+    transform-origin: left;
+    transition: transform 650ms cubic-bezier(0.54 -0.81, 0.57, 0.57);
+}
+.open .bar.end{
+    transform: rotate(-450deg) translateX(-.8rem);
+}
+.landing-text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+
+}
+.landing-text h1{
+    font-size: 9rem;
+    user-select: none;
+    font-family: monospace;
+    padding: 1rem;
+    background: linear-gradient( to top, #ffe838, #fd57bf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.landing-text h5{
+    font-size:1.5rem;
+    font-weight: 300rem;
+}
+/*End header*/
+
+/*Start about*/
+.about .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.about-heading{
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0;
+    margin-bottom: 6rem;
+
+}
+.about-heading h1{
+    font-size: 8rem;
+    opacity: .3;
+
+}
+.about-heading h6{
+    font-size: 2rem;
+    font-weight: 300;
+}
+.profile-img{
+    flex: 1;
+    margin-right: 5rem;
+    
+}
+.about-details{
+    flex: 1;
+    
+}
+.social-media ul{
+   
+    display: flex;
+    list-style: none;
+    margin-top: 5rem;
+}
+.social-media i{
+    margin-right: 2rem;
+    font-size: 3rem;
+    transition: color 650ms;
+}
+.fa-twitter:hover{
+    color: #38a1f3;
+
+}
+.fa-github-alt:hover{
+    color: #ffffff;
+
+}
+.fa-linkedin-in:hover{
+    color: #4267b2;
+
+}
+/*End about*/
+
+/*Start skills*/
+.my-skill{
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2.5rem;
+    text-align: center;
+}
+.skill{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.skill h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 2rem -2px 2rem 0;
+
+}
+.icon-container{
+    width: 10rem;
+    height: 10rem;
+    border: 3px solid #ffe838;
+    background-color: #fd57bf;
+    margin-bottom: 2rem;
+    display: flex;
+    transform: rotate(45deg);
+
+}
+.icon-container i{
+    color: #ffe838;
+    font-size: 5rem;
+    margin: auto;
+    transform: rotate(-45deg);
+
+}
+/*End skills*/
+
+/*Start portfolio*/
+.boxes{
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2.5rem;
+    text-align: center;
+}
+.box img{
+    border: 3px solid #fd57bf;
+    border-radius: 5px;
+}
+.box h1{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 300;
+    opacity: 0.7;
+    margin: 1rem 0;
+}
+.box .cta{
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #ffe838;
+    transition: color 650ms;
+}
+.box .cta:hover{
+    color: #2f67cd;
+}
+
+/*End services*/
+
+/*Start contact*/
+.contact p{
+    font-family: monospace;
+    text-align: center;
+    
+}
+.contact .social-media ul{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient( to top, #ffe838, #fd57bf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.contact .social-media{
+    margin-bottom: 2rem;
+}
+
+/*End contact*/
+
+/*Start footer*/
+footer{
+    background-color: #16162d;
+    padding: 3rem;
+    font-family: monospace;
+    text-align: center;
+    font-size: 6px;
+}
+/*End footer*/
+
+/*Start animations*/
+/*End animations*/
+
+/*Start media queries*/
+@media screen and (max-width: 768px) {
+  body{
+    overflow-x: hidden;
+    background: url(images/sitebg2.jpg) no-repeat center fixed;
+    background-size: cover;
+    }  
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 60vh;
+        top: 12vh;
+        background: #16162d;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        z-index: 10;
+        transform: translateX(100%);
+        transition:  transform 0.5s ease-in;
+
+    }
+    .nav-links li{
+        opacity: 1;
+        margin: 1rem 1rem 2rem 0;
+    }
+    .menu-toggler{
+        display: flex;
+    }
+    .nav-open{
+        transform: translateX(0%);
+    }
+    @keyframes navLinkFade{
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+    /* .nav-bar {
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    top: -100%;
+    background-color:#16162d;
+    width: 100%;
+    height: 100vh;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    transition: all 650ms cubic-bezier(1,0,0,1);
+    
+  }
+
+  .nav-list{
+    justify-content: space-between;
+    
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+      
+  }
+  
+  .nav-links{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-links li{
+     margin: 2rem 0;
+  } */
+    .landing-text h1{
+        font-size: 7rem;
+    }
+    .about-heading h1{
+        font-size: 6rem;
+    }
+    .icon-container{
+        width: 7rem;
+        height: 7rem;
+    }
+    .icon-container i{
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .landing-text h1{
+        font-size: 6rem;
+    }
+    .landing-text h6{
+        font-size: 1rem;
+    }
+    .about .container{
+        flex-direction: column;
+    }
+    .profile-img{
+        margin: 0 0 7rem 0;
+    }
+}
+/*End media queries*/
