@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 html{
+    overflow-x: hidden;
     font-size: 10px;
     font-family: "Roboto", sans-serif;
     color: #eeeeee;
